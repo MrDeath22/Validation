@@ -1,0 +1,72 @@
+body {
+   font-family: 'Readex Pro', sans-serif;
+   font-size: 18px;
+   padding: 30px 50px;
+   padding-bottom: 0;
+}
+
+.inp, .mail-inp, .pass-inp, .pass-conf-inp {
+   display: block;
+   width: 300px;
+   height: 40px;
+   font-size: 17px;
+   padding: 0 10px;
+   margin-bottom: 18px;
+   border-radius: 12px;
+   border: 2px solid #ccc;
+   outline: none;
+   transition: all 0.3s ease;
+}
+
+.inp:focus,
+.mail-inp:focus,
+.pass-inp:focus,
+.pass-conf-inp:focus {
+   border: 2px solid #BAC34E;
+   box-shadow: 0px 0px 10px 0px #BAC34E33;
+}
+
+.inp::placeholder,
+.mail-inp::placeholder,
+.pass-inp::placeholder,
+.pass-conf-inp::placeholder {
+   font-size: 16px;
+   color: #000;
+   opacity: 0.5;
+}
+
+.txt {
+   display: inline-block;
+   margin-bottom: 8px;
+}
+
+.btn {
+   display: inline-block;
+   font-size: 18px;
+   padding: 10px 25px;
+   margin-top: 8px;
+   border-radius: 12px;
+   border: none;
+   color: #fff;
+   background: #BAC34E;
+   cursor: pointer;
+}
+
+.cont {
+   width: 100%;
+   height: 90vh;
+}
+
+.warn {
+   display: flex;
+   border-color: red;
+}
+
+.warn::placeholder {
+   color: red;
+   opacity: 1;
+}
+
+.sucs {
+   border-color: green;
+}
