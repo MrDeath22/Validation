@@ -13,7 +13,9 @@ form.addEventListener('submit', (e) => {
    inps.forEach(item => {
       if (item.value == '') {
          item.classList.add('warn');
+         item.classList.remove('sucs');
       } else if (item.value != '') {
+         item.classList.remove('warn');
          item.classList.add('sucs');
       }
    })
@@ -28,7 +30,9 @@ inps.forEach(item => {
       cont.addEventListener('click', () => {
          if (item.value == '') {
             item.classList.add('warn');
+            item.classList.remove('sucs');
          } else {
+            item.classList.remove('warn');
             item.classList.add('sucs');
          }
       })
@@ -41,12 +45,16 @@ function confirmPassword(e) {
 
       passInp.classList.add('warn');
       conPassInp.classList.add('warn');
+      passInp.classList.remove('sucs');
+      conPassInp.classList.remove('sucs');
    } else if (passInp.value == conPassInp.value) {
       
       confirm();
 
       function confirm(e) {
          if (passInp.value.length >= 8 && conPassInp.value.length >= 8) {
+            passInp.classList.remove('warn');
+            conPassInp.classList.remove('warn');
             passInp.classList.add('sucs');
             conPassInp.classList.add('sucs');
          }
@@ -55,9 +63,11 @@ function confirmPassword(e) {
 } 
 
 function checkMail(e) {
-   if (/([a-z@.0-9]+)\g/.test(mailInp.value)) {
+   if (/^\S+@\S+\.\S+$/.test(mailInp.value)) {
+      mailInp.classList.remove('warn');
       mailInp.classList.add('sucs');
    } else {
+      mailInp.classList.remove('sucs');
       mailInp.classList.add('warn');
    }
 }
